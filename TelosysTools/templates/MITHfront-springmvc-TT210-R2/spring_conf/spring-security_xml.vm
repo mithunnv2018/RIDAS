@@ -1,0 +1,36 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http pattern="/rest/**" security="none" />
+
+	<!-- <http auto-config="true">
+		<intercept-url pattern="/**" access="ROLE_USER" />
+	</http> -->
+
+<!-- access="isAuthenticated()" --><!-- this means all URL in this app will be checked if user is authenticated -->
+
+	<http pattern="/css/**" security="none" />
+	<http pattern="/fonts/**" security="none" />
+	<http pattern="/images/**" security="none" />
+	<http pattern="/js/**" security="none" />
+
+	<http pattern="/user/login" security="none" />
+	<http use-expressions="true" auto-config="true" >
+		<intercept-url pattern="/**"  access="isAuthenticated()"/> <!-- this means all URL in this app will be checked if user is authenticated -->
+		<form-login login-page="/user/login"  
+			  /> <!-- We will just use the built-in form login page in Spring -->
+		<logout logout-url="/logout"  /> <!-- the logout url we will use in JSP -->
+	</http>
+
+	<authentication-manager>
+		<authentication-provider user-service-ref="customUserDetailsService">
+   
+   
+	    </authentication-provider>
+	</authentication-manager>
+
+</beans:beans>

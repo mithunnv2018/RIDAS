@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RTGSMonthlyReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e3f0cf94-9480-484d-a402-e080a5e13ce0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="RTGSMonthlyReport" uuid="0dced66a-25d1-4ec9-9626-7b63ebea52ec">
+		<parameter name="paraprofit" class="java.lang.String"/>
+		<parameter name="paramonth" class="java.lang.String"/>
+		<parameter name="parayear" class="java.lang.String"/>
+		<parameter name="parapaid" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT r.member_id, m.member_name, r.receipt_pk, r.receipt_amount, r.receipt_profit_from, rec.receipt_currentdate FROM tbl_rtgs_paid_details r,tbl_membership_form m, tbl_receipt_master rec WHERE m.member_id=r.member_id AND r.receipt_pk=rec.receipt_pk AND DAY(rec.receipt_currentdate)<=$P{paraprofit} AND r.month=$P{paramonth} AND r.year=$P{parayear} AND r.paid=$P{parapaid} ]]>
+		</queryString>
+		<field name="member_id" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="member_name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="receipt_pk" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="receipt_amount" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="receipt_profit_from" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="receipt_currentdate" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="profit" class="java.lang.String"/>
+	<parameter name="month" class="java.lang.String"/>
+	<parameter name="year" class="java.lang.String"/>
+	<parameter name="paid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT 1]]>
+	</queryString>
+	<field name="1" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="802" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" x="0" y="0" width="555" height="802" uuid="b27511ee-e55a-4623-9e50-f0e9a4c70f85"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="RTGSMonthlyReport" uuid="5de07fd1-b70d-4f46-b5bf-0914e79491fd">
+						<datasetParameter name="paraprofit">
+							<datasetParameterExpression><![CDATA[$P{profit}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="paramonth">
+							<datasetParameterExpression><![CDATA[$P{month}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="parayear">
+							<datasetParameterExpression><![CDATA[$P{year}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="parapaid">
+							<datasetParameterExpression><![CDATA[$P{paid}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="03a8d8b3-04a1-46a7-9919-ca50322369e1">
+						<jr:columnHeader height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="b3a5ab8e-9005-4ef9-8dc0-f1cad83b9e02"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Member Id]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="f8545ba0-9b6a-4831-a52b-a90957504ff7"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{member_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="30f55c0c-d844-4de6-8614-5c7397e92bc1">
+						<jr:columnHeader height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="4aff3164-9964-4c63-8230-ce7e5db6efe3"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Member Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="dd2b15c3-4bf2-45c7-845f-7dba129ce03d"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{member_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="2772a081-f807-4ff2-ad92-0dca5eb84882">
+						<jr:columnHeader height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="07662d1d-0940-4bdb-ba37-f3d0ba32495d"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Receipt Id]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="98c9e40d-ddd7-4961-9d68-0c2274e75f43"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{receipt_pk}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="f8aafcd8-e852-4557-8d57-0192af4ba0d3">
+						<jr:columnHeader height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="dc500b79-ecbf-4346-9542-c4ae39dbf72c"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Investment Amount]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="8bb5a293-2658-4557-9b3f-a4dd6d01d034"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{receipt_amount}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="c54160ab-5e80-464e-ac27-59c65278f944">
+						<jr:columnHeader height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="7f889a53-8a78-4b5c-b2f7-f2ac92e05844"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[EMI Amount]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="5d2b18ff-bee7-4d2f-a808-ef0c8cf4c966"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{receipt_profit_from}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="1da12792-2f39-4d99-a864-65c6339f9e49">
+						<jr:columnHeader height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="8ce4f7ea-32e9-4eca-a74a-a3ddf573f621"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Receipt Date]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="7f6a8694-fb1f-489e-a8c0-3a71eb563b08"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{receipt_currentdate}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

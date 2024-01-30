@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="membershipenrollment" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cc391ea3-e9cc-42a3-8c31-0ed58531be12">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="984"/>
+	<parameter name="memberId" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="param_chequenumber" class="java.lang.String"/>
+	<parameter name="param_chequedate" class="java.lang.String"/>
+	<parameter name="param_chequebank" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[".\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="param_receiptPk" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     tbl_membership_form.`member_id` AS tbl_membership_form_member_id,
+     tbl_membership_form.`member_prefix` AS tbl_membership_form_member_prefix,
+     tbl_membership_form.`member_name` AS tbl_membership_form_member_name,
+     tbl_membership_form.`member_so_wo_do` AS tbl_membership_form_member_so_wo_do,
+     tbl_membership_form.`member_date_of_birth` AS tbl_membership_form_member_date_of_birth,
+     tbl_membership_form.`member_nationality` AS tbl_membership_form_member_nationality,
+     tbl_membership_form.`member_residence` AS tbl_membership_form_member_residence,
+     tbl_membership_form.`member_office_address` AS tbl_membership_form_member_office_address,
+     tbl_membership_form.`member_residental_status` AS tbl_membership_form_member_residental_status,
+     tbl_membership_form.`member_pan` AS tbl_membership_form_member_pan,
+     tbl_membership_form.`member_occupation` AS tbl_membership_form_member_occupation,
+     tbl_membership_form.`member_contact_mobile` AS tbl_membership_form_member_contact_mobile,
+     tbl_membership_form.`member_contact_residence` AS tbl_membership_form_member_contact_residence,
+     tbl_membership_form.`member_contact_office` AS tbl_membership_form_member_contact_office,
+     tbl_membership_form.`member_contact_others` AS tbl_membership_form_member_contact_others,
+     tbl_membership_form.`member_contact_email` AS tbl_membership_form_member_contact_email,
+     tbl_membership_form.`member_membership_through` AS tbl_membership_form_member_membership_through,
+     tbl_membership_form.`member_fk` AS tbl_membership_form_member_fk,
+     tbl_membership_form.`nominee_name` AS tbl_membership_form_nominee_name,
+     tbl_membership_form.`nominee_so_wo_do` AS tbl_membership_form_nominee_so_wo_do,
+     tbl_membership_form.`nominee_date_of_birth` AS tbl_membership_form_nominee_date_of_birth,
+     tbl_membership_form.`nominee_address` AS tbl_membership_form_nominee_address,
+     tbl_membership_form.`nominee_contact_number` AS tbl_membership_form_nominee_contact_number,
+     tbl_membership_form.`nominee_gender` AS tbl_membership_form_nominee_gender,
+     tbl_membership_form.`nominee_relation_with_member` AS tbl_membership_form_nominee_relation_with_member,
+     tbl_membership_form.`bank_acc_no` AS tbl_membership_form_bank_acc_no,
+     tbl_membership_form.`ifsc_code` AS tbl_membership_form_ifsc_code,
+     tbl_membership_form.`type_of_acc` AS tbl_membership_form_type_of_acc,
+     tbl_membership_form.`bank_name` AS tbl_membership_form_bank_name,
+     tbl_membership_form.`branch_and_address` AS tbl_membership_form_branch_and_address,
+     tbl_membership_form.`receipt_no` AS tbl_membership_form_receipt_no,
+     tbl_membership_form.`verified_by` AS tbl_membership_form_verified_by,
+     tbl_membership_form.`countpk` AS tbl_membership_form_countpk,
+     tbl_membership_form.`prefixcolumn` AS tbl_membership_form_prefixcolumn,
+     tbl_membership_form.`create_date` AS tbl_membership_form_create_date,
+     tbl_membership_form.`modified_date` AS tbl_membership_form_modified_date,
+     tbl_membership_form.`user_id` AS tbl_membership_form_user_id,
+     tbl_membership_form.`status` AS tbl_membership_form_status,
+     tbl_membership_form.`member_current_date` AS tbl_membership_form_member_current_date
+FROM
+     `tbl_membership_form` tbl_membership_form
+WHERE
+     member_id = $P{memberId}]]>
+	</queryString>
+	<field name="tbl_membership_form_member_id" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_prefix" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_name" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_so_wo_do" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_date_of_birth" class="java.sql.Date"/>
+	<field name="tbl_membership_form_member_nationality" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_residence" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_office_address" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_residental_status" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_pan" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_occupation" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_mobile" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_residence" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_office" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_others" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_email" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_membership_through" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_fk" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_name" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_so_wo_do" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_date_of_birth" class="java.sql.Date"/>
+	<field name="tbl_membership_form_nominee_address" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_contact_number" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_gender" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_relation_with_member" class="java.lang.String"/>
+	<field name="tbl_membership_form_bank_acc_no" class="java.lang.String"/>
+	<field name="tbl_membership_form_ifsc_code" class="java.lang.String"/>
+	<field name="tbl_membership_form_type_of_acc" class="java.lang.String"/>
+	<field name="tbl_membership_form_bank_name" class="java.lang.String"/>
+	<field name="tbl_membership_form_branch_and_address" class="java.lang.String"/>
+	<field name="tbl_membership_form_receipt_no" class="java.lang.String"/>
+	<field name="tbl_membership_form_verified_by" class="java.lang.String"/>
+	<field name="tbl_membership_form_countpk" class="java.lang.Long"/>
+	<field name="tbl_membership_form_prefixcolumn" class="java.lang.String"/>
+	<field name="tbl_membership_form_create_date" class="java.sql.Timestamp"/>
+	<field name="tbl_membership_form_modified_date" class="java.sql.Timestamp"/>
+	<field name="tbl_membership_form_user_id" class="java.lang.String"/>
+	<field name="tbl_membership_form_status" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_current_date" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="98"/>
+	</pageHeader>
+	<detail>
+		<band height="550">
+			<rectangle>
+				<reportElement x="28" y="304" width="516" height="233" uuid="92881ad4-e0b9-4426-bee7-6b2b1cfdc65d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="f47e822f-8598-438e-a965-c1916539a6a7"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[MEMBERSHIP ENROLLMENT FORM]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="20" width="555" height="189" uuid="bffad29c-5bdc-4788-a039-2145831a880b"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["Dear Sir /Madam, \n"+
+
+"      I the undersigned wish to be a member of your company RIDAS INDIA"+
+" "+
+"PROPERTIES and get eligible to become a Business Associate as per the"+
+" "+
+"company terms and condition which I  have read and understood and shall abide"+
+" "+
+"by the same as stipulated by your company."+
+"\n\n"+
+"      I further agree to provide any necessary document of proof of residence, and"+
+" "+
+"identity for becoming a member of RIDAS INDIA PROPERTIES. I have, in the "+
+
+"meantime signed the salient terms and condition of this membership enrollment"+
+" "+
+"form."+
+"\n\n"+
+"      I remit herewith a sum of Rs.1000/-(Rupees One Thousand"+
+" "+
+"Only) By way of Cash / Bank DD/Cheque No."+$P{param_chequenumber}+" Dated "+($P{param_chequedate}.isEmpty()?"--":$P{param_chequedate})+" Drawn"+
+" "+
+"on "+($P{param_chequebank}.isEmpty()?"--":$P{param_chequebank})+" Bank  as part of Membership of RIDAS INDIA PROPERTIES."+
+"\n\n"+
+"I hereby provide the following particulars which is required for becoming a"+
+" "+
+"member of your company:				"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="315" width="94" height="20" uuid="508d3f98-31b2-493e-a380-9ca5a6d78933"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="315" width="392" height="20" uuid="ba9d9355-65a2-49dd-9ea9-be9554200cd5"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_name}+""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="335" width="392" height="20" uuid="40e51d14-c97a-4251-8061-e3f405de0699"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_so_wo_do}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="335" width="94" height="20" uuid="550deaa0-1c8e-47a8-82d2-493fb095d184"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S/o.W/o.D/o]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="141" y="355" width="392" height="20" uuid="8b46eea0-0ead-40a2-97c6-527914e490fc"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+((new SimpleDateFormat("dd MMM yyyy").format($F{tbl_membership_form_member_date_of_birth})))+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="355" width="94" height="20" uuid="ec6128e5-c5df-4ca2-b2ba-4b08cada3972"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date of Birth]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="375" width="392" height="20" uuid="0a4824e4-1042-4d94-83b2-44e5bc3cb240"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_nationality}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="375" width="94" height="20" uuid="1c5b63d8-2a28-4a53-9dd5-47c5978883f9"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nationality     ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="395" width="392" height="34" uuid="176ea3eb-7671-4d2e-8451-06e2c4296666"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_residence}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="395" width="94" height="34" uuid="21962eb5-3221-4872-99af-182dee117bce"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Residence      ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="429" width="392" height="37" uuid="60141c58-38e5-4e09-8185-a6bb7c89f6c7"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_office_address}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="429" width="94" height="37" uuid="b3b2d356-123e-4604-914d-18f8a192ffad"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Office Adress]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="466" width="94" height="20" uuid="93a36925-cebf-463f-949b-e995c1375d3d"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Residential Status:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="466" width="392" height="20" uuid="b71e06a5-be54-421e-aaab-afb579cd5857"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_residental_status}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="486" width="94" height="20" uuid="a47a49b1-fad0-4c58-9e8b-45073d027e45"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAN                  ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="486" width="392" height="20" uuid="8fdc5435-d38f-4881-b9c4-2735f24c612f"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_pan}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="506" width="94" height="20" uuid="458db9df-a007-49eb-ae7e-d63c3303f252"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Occupation]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="506" width="392" height="20" uuid="fdd25d3d-fe08-46f3-bff8-4ee839417f1d"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_occupation}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="280" width="555" height="24" uuid="b28f0e5a-6366-45e4-8d76-681392c72733"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Member Details:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="69" y="209" width="72" height="71" uuid="e43e67c5-3d65-4ee6-af96-a9e1a9613a54"/>
+			</rectangle>
+		</band>
+		<band height="620">
+			<rectangle>
+				<reportElement x="28" y="281" width="516" height="194" uuid="07d131b2-535e-46ea-8bb3-935575834fc6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="28" y="23" width="516" height="90" uuid="2293bdea-84c1-432b-bac9-21a0702246c7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="100" y="53" width="77" height="20" uuid="232c45e7-0a2e-4559-bb79-00adde11b7f1"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Office]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="33" width="77" height="20" uuid="abae8d02-e873-4013-bcb9-abe346c863a4"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="53" width="121" height="20" uuid="585358c4-8167-4450-8ad3-6acc92e96ec0"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_contact_office}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="33" width="53" height="20" uuid="904842a8-9688-4db4-b8ab-e5acce16e8e4"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="33" width="121" height="20" uuid="9cd61270-8340-4f9c-82c1-8095dbceebbd"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_contact_mobile}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="298" y="33" width="62" height="20" uuid="61aa953b-a8da-4cd7-895a-da8551194f6f"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Residence]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="53" width="62" height="20" uuid="66231e90-b9af-49b5-be97-5f6147f877f7"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Others]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="360" y="33" width="173" height="20" uuid="001fecb3-6e31-42f8-bf4b-f4d537d18ba4"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_contact_residence}+""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="53" width="173" height="20" uuid="17f7aed9-0ee2-4c27-bdb3-533331b2c523"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_contact_others}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="23" uuid="c6d6b347-cd1b-40d3-9a5f-c6f02a45d942"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact Details:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="73" width="77" height="20" uuid="ac07dd41-cb9a-43a9-b734-0b9afdd72bdd"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="73" width="356" height="20" uuid="d7e91115-a8bc-41d1-a9eb-1e295ebcbec1"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_contact_email}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="93" width="130" height="20" uuid="046ac840-e97f-4bfa-b0f4-9998ea0f12e9"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Membership Through]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="93" width="356" height="20" uuid="ab91d485-143f-4160-8658-41ce117fa239"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_member_membership_through}+""]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement stretchType="RelativeToBandHeight" x="28" y="130" width="516" height="56" uuid="2868f5e4-2ba2-4a64-a205-8d773e099ce1"/>
+				<subreportParameter name="member_id3">
+					<subreportParameterExpression><![CDATA[$F{tbl_membership_form_member_fk}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="param_chequedate">
+					<subreportParameterExpression><![CDATA[$P{param_chequedate}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "membershipenrollment_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="189" y="358" width="355" height="43" uuid="92f07215-4486-4867-beb2-a430dd07204c"/>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_nominee_address}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="338" width="153" height="20" uuid="0bb48d21-6886-4957-b3b9-d09f84c59852"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date of Birth]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="189" y="338" width="355" height="20" uuid="c0a56a94-125a-47a9-8d2d-07fb15dbd9c1"/>
+				<textFieldExpression><![CDATA[": "+((new SimpleDateFormat("dd MMM yyyy").format($F{tbl_membership_form_nominee_date_of_birth})))+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="298" width="153" height="20" uuid="cdefdded-4417-45a0-a04d-29f34aa0ce46"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="318" width="153" height="20" uuid="b1e820de-ddd6-42fd-912d-7a03af0ad4a0"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S/o.D/o.W/o.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="247" width="555" height="20" uuid="c557b62d-512b-4ac3-aa77-6b60d22afee3"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nominee Details]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="298" width="355" height="20" uuid="6f5ebeb1-a7f3-460c-90a7-9669c5caaaff"/>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_nominee_name}+""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="189" y="318" width="355" height="20" uuid="721a264b-b82c-446d-bbc0-d3d790a9d0c0"/>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_nominee_so_wo_do}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="358" width="153" height="20" uuid="26a7b9bb-17ad-4f5e-9081-551a9fead31e"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="401" width="355" height="20" uuid="138effea-075c-434d-9ed9-fc98b9ed8564"/>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_nominee_contact_number}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="401" width="153" height="20" uuid="c1930aa9-e5df-4688-a925-457e83bf34c7"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact Number]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="421" width="355" height="20" uuid="582f22a6-75b8-4bc6-aa30-42cebcd89e64"/>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_nominee_gender}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="421" width="153" height="20" uuid="fd3397e1-3e0f-4af2-8204-8af4e9c1b213"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="441" width="355" height="20" uuid="ee2382dd-af42-4f7a-8b07-7e1a3b323e68"/>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_nominee_relation_with_member}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="441" width="153" height="20" uuid="04a9b0c7-ab85-434e-bae5-bfacc7dac479"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relationship with Member]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="514" width="166" height="20" uuid="90714063-7f9e-4efc-84aa-7fd780a2a42b"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Signature of the Member]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="69" y="495" width="72" height="71" uuid="d9144df8-999c-48c7-91a6-322fdaeaf5af"/>
+			</rectangle>
+			<break>
+				<reportElement x="0" y="-13" width="100" height="1" uuid="394b5b6e-77f8-4787-884c-14f88947e67e"/>
+			</break>
+			<break>
+				<reportElement x="0" y="567" width="100" height="1" uuid="cd98d359-9d5e-4aca-a7ae-54b855ccdffe"/>
+			</break>
+		</band>
+		<band height="277">
+			<rectangle>
+				<reportElement x="28" y="20" width="516" height="152" uuid="c24b66e5-515f-4bc7-8213-600a0481f83a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="cfdb9907-fe3e-4bed-bfe4-3550b3a61508"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOR OFFICE USE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="33" width="94" height="20" uuid="065f0b89-f014-4d33-9cc9-2aa22956a41c"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Membership No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="33" width="392" height="20" uuid="75a3de3a-5308-439d-bc63-d56bd26fb58a"/>
+				<textFieldExpression><![CDATA[": "+$P{memberId}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="53" width="94" height="20" uuid="6774de15-d54b-4010-a251-005d3e740767"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bank A/c No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="53" width="392" height="20" uuid="46b423b0-7a71-446f-9c90-5ebb44ee787e"/>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_bank_acc_no}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="73" width="94" height="20" uuid="09580037-198b-479e-a198-bdc6de61ef41"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IFSC Code No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="73" width="392" height="20" uuid="0c395f12-f978-4587-9078-c19a51aa031e"/>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_ifsc_code}+""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="113" width="392" height="20" uuid="645d4a6e-cb51-4968-aeed-11775b1461f0"/>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_bank_name}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="113" width="94" height="20" uuid="935decb4-963b-45fa-96be-f8fb9b78a144"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bank Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="93" width="392" height="20" uuid="760012bd-82c8-40b1-af8b-a25394b3a1b6"/>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_type_of_acc}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="93" width="94" height="20" uuid="cc9e2546-40dc-4606-82d7-444d3e58caf3"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type of Account.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="133" width="392" height="20" uuid="48d311f7-10e4-43cd-ab7d-f6836319e090"/>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_branch_and_address}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="133" width="94" height="20" uuid="cddf223d-20c8-4857-8d80-d8861fcdc671"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Branch and address:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement stretchType="RelativeToBandHeight" x="28" y="193" width="516" height="53" isPrintWhenDetailOverflows="true" uuid="c4cc39e9-000b-4240-9770-7d028aa0e40b"/>
+				<subreportParameter name="member_id2">
+					<subreportParameterExpression><![CDATA[$F{tbl_membership_form_member_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="receiptPk1">
+					<subreportParameterExpression><![CDATA[$P{param_receiptPk}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="param_chequenumber">
+					<subreportParameterExpression><![CDATA[$P{param_chequenumber}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "membershipenrollment_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="341">
+			<staticText>
+				<reportElement x="0" y="43" width="566" height="20" uuid="5d87bcf2-d62b-491d-92ed-04b9a2ce6c26"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Terms and conditions]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="0" width="69" height="20" uuid="d01e16ac-9f3e-4918-81fe-97b06633efaf"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Verified by]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="114" y="0" width="246" height="20" uuid="391b2af0-8d3e-40da-b4b7-cc14ec485de1"/>
+				<textFieldExpression><![CDATA[": "+$F{tbl_membership_form_verified_by}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="77" width="555" height="157" uuid="ddab39ca-d696-4910-ac12-7ca7aff797c7"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[1. Membership charges of Rs.1000/- so paid by the applicant shall not be refunded under any circumstances.
+2. Membership is not transferable to any person except the nominee.
+3. The company reserves the rights to accept the membership or reject the membership. Our Company reserves the rights to accept or reject the application without disclosing or citing any reasons.
+4. Membership is at the sole discretion of the management of the company .
+5. The company reserves the rights to verify the documents given by the applicant for membership
+6. All payments shall be made by a crossed cheque or cash favoring RIDAS INDIA PROPERTIES, And a valid official receipt shall be obtained after making the payment towards membership amount.
+7. Hon’ble court of Thane alone shall have jurisdiction in all matters arising out of touching and/or concerning this
+transaction.
+8.All payments will be by way of a crossed cheque or a D.D favoring M/s. Ridas India Properties.
+9.Cheque and DD are subject to realization.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="0" width="159" height="20" uuid="fb11dd01-e68e-4a10-8229-0df41b1d3584"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Authorized signatory:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="292" width="221" height="20" uuid="5ca9039d-35dc-450d-8b49-8f922a5d757c"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(Signature of the Applicant)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="234" width="555" height="35" uuid="9c00ac0d-6cd1-4ec6-be7d-6ae05082693d"/>
+				<textElement markup="styled">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" I, "+$F{tbl_membership_form_member_name}+", the applicant for the membership of RIDAS INDIA PROPERTIES have read the terms and conditionsand hereby affix my signature to this Membership enrollment form this "+((new SimpleDateFormat("dd MMM yyyy").format($F{tbl_membership_form_member_current_date})))+""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="28"/>
+	</pageFooter>
+</jasperReport>

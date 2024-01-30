@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="officialReceiptBusinessAssociate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c6967463-b910-47a7-8ccd-1c11c448f821">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="receipt_pk" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="param_buas_id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tbl_membership_form.`member_id` AS tbl_membership_form_member_id,
+     tbl_membership_form.`member_prefix` AS tbl_membership_form_member_prefix,
+     tbl_membership_form.`member_name` AS tbl_membership_form_member_name,
+     tbl_membership_form.`member_so_wo_do` AS tbl_membership_form_member_so_wo_do,
+     tbl_membership_form.`member_date_of_birth` AS tbl_membership_form_member_date_of_birth,
+     tbl_membership_form.`member_nationality` AS tbl_membership_form_member_nationality,
+     tbl_membership_form.`member_residence` AS tbl_membership_form_member_residence,
+     tbl_membership_form.`member_office_address` AS tbl_membership_form_member_office_address,
+     tbl_membership_form.`member_residental_status` AS tbl_membership_form_member_residental_status,
+     tbl_membership_form.`member_pan` AS tbl_membership_form_member_pan,
+     tbl_membership_form.`member_occupation` AS tbl_membership_form_member_occupation,
+     tbl_membership_form.`member_contact_mobile` AS tbl_membership_form_member_contact_mobile,
+     tbl_membership_form.`member_contact_residence` AS tbl_membership_form_member_contact_residence,
+     tbl_membership_form.`member_contact_office` AS tbl_membership_form_member_contact_office,
+     tbl_membership_form.`member_contact_others` AS tbl_membership_form_member_contact_others,
+     tbl_membership_form.`member_contact_email` AS tbl_membership_form_member_contact_email,
+     tbl_membership_form.`member_membership_through` AS tbl_membership_form_member_membership_through,
+     tbl_membership_form.`member_fk` AS tbl_membership_form_member_fk,
+     tbl_membership_form.`nominee_name` AS tbl_membership_form_nominee_name,
+     tbl_membership_form.`nominee_so_wo_do` AS tbl_membership_form_nominee_so_wo_do,
+     tbl_membership_form.`nominee_date_of_birth` AS tbl_membership_form_nominee_date_of_birth,
+     tbl_membership_form.`nominee_address` AS tbl_membership_form_nominee_address,
+     tbl_membership_form.`nominee_contact_number` AS tbl_membership_form_nominee_contact_number,
+     tbl_membership_form.`nominee_gender` AS tbl_membership_form_nominee_gender,
+     tbl_membership_form.`nominee_relation_with_member` AS tbl_membership_form_nominee_relation_with_member,
+     tbl_membership_form.`bank_acc_no` AS tbl_membership_form_bank_acc_no,
+     tbl_membership_form.`ifsc_code` AS tbl_membership_form_ifsc_code,
+     tbl_membership_form.`type_of_acc` AS tbl_membership_form_type_of_acc,
+     tbl_membership_form.`bank_name` AS tbl_membership_form_bank_name,
+     tbl_membership_form.`branch_and_address` AS tbl_membership_form_branch_and_address,
+     tbl_membership_form.`receipt_no` AS tbl_membership_form_receipt_no,
+     tbl_membership_form.`verified_by` AS tbl_membership_form_verified_by,
+     tbl_membership_form.`countpk` AS tbl_membership_form_countpk,
+     tbl_membership_form.`prefixcolumn` AS tbl_membership_form_prefixcolumn,
+     tbl_membership_form.`create_date` AS tbl_membership_form_create_date,
+     tbl_membership_form.`modified_date` AS tbl_membership_form_modified_date,
+     tbl_membership_form.`user_id` AS tbl_membership_form_user_id,
+     tbl_membership_form.`status` AS tbl_membership_form_status,
+     tbl_receipt_master.`receipt_pk` AS tbl_receipt_master_receipt_pk,
+     tbl_receipt_master.`member_id` AS tbl_receipt_master_member_id,
+     tbl_receipt_master.`receipt_amount` AS tbl_receipt_master_receipt_amount,
+     tbl_receipt_master.`receipt_modeofpayment` AS tbl_receipt_master_receipt_modeofpayment,
+     tbl_receipt_master.`receipt_amountinwords` AS tbl_receipt_master_receipt_amountinwords,
+     tbl_receipt_master.`receipt_otherdetails` AS tbl_receipt_master_receipt_otherdetails,
+     tbl_receipt_master.`receipt_currentdate` AS tbl_receipt_master_receipt_currentdate,
+     tbl_receipt_master.`receipt_type` AS tbl_receipt_master_receipt_type,
+     tbl_receipt_master.`receipt_bank` AS tbl_receipt_master_receipt_bank,
+     tbl_receipt_master.`receipt_chequedate` AS tbl_receipt_master_receipt_chequedate,
+     tbl_receipt_master.`receipt_drawnOn` AS tbl_receipt_master_receipt_drawnOn,
+     tbl_receipt_master.`receipt_branch` AS tbl_receipt_master_receipt_branch,
+     tbl_receipt_master.`receipt_city` AS tbl_receipt_master_receipt_city,
+     tbl_receipt_master.`receipt_atProject` AS tbl_receipt_master_receipt_atProject,
+     tbl_receipt_master.`receipt_place` AS tbl_receipt_master_receipt_place,
+     tbl_receipt_master.`receipt_profit_from` AS tbl_receipt_master_receipt_profit_from,
+     tbl_receipt_master.`receipt_profit_to` AS tbl_receipt_master_receipt_profit_to,
+     tbl_receipt_master.`receipt_security_cheque_no` AS tbl_receipt_master_receipt_security_cheque_no,
+     tbl_receipt_master.`receipt_security_cheque_date` AS tbl_receipt_master_receipt_security_cheque_date,
+     tbl_receipt_master.`receipt_security_cheque_drawnOn` AS tbl_receipt_master_receipt_security_cheque_drawnOn,
+     tbl_receipt_master.`receipt_security_cheque_address` AS tbl_receipt_master_receipt_security_cheque_address,
+     tbl_receipt_master.`countpk` AS tbl_receipt_master_countpk,
+     tbl_receipt_master.`prefixcolumn` AS tbl_receipt_master_prefixcolumn,
+     tbl_receipt_master.`create_date` AS tbl_receipt_master_create_date,
+     tbl_receipt_master.`modified_date` AS tbl_receipt_master_modified_date,
+     tbl_receipt_master.`status` AS tbl_receipt_master_status,
+     tbl_receipt_master.`user_id` AS tbl_receipt_master_user_id,
+     tbl_busi_asso_master.`bu_as_id` AS tbl_busi_asso_master_bu_as_id,
+     tbl_busi_asso_master.`member_id` AS tbl_busi_asso_master_member_id,
+     tbl_busi_asso_master.`receipt_pk` AS tbl_busi_asso_master_receipt_pk,
+     tbl_busi_asso_master.`countpk` AS tbl_busi_asso_master_countpk,
+     tbl_busi_asso_master.`prefixcolumn` AS tbl_busi_asso_master_prefixcolumn,
+     tbl_busi_asso_master.`create_date` AS tbl_busi_asso_master_create_date,
+     tbl_busi_asso_master.`modified_date` AS tbl_busi_asso_master_modified_date,
+     tbl_busi_asso_master.`status` AS tbl_busi_asso_master_status,
+     tbl_busi_asso_master.`user_id` AS tbl_busi_asso_master_user_id
+FROM
+     `tbl_membership_form` tbl_membership_form INNER JOIN `tbl_receipt_master` tbl_receipt_master ON tbl_membership_form.`member_id` = tbl_receipt_master.`member_id`
+     INNER JOIN `tbl_busi_asso_master` tbl_busi_asso_master ON tbl_membership_form.`member_id` = tbl_busi_asso_master.`member_id`
+     AND tbl_receipt_master.`receipt_pk` = tbl_busi_asso_master.`receipt_pk`
+WHERE
+     bu_as_id = $P{param_buas_id}]]>
+	</queryString>
+	<field name="tbl_membership_form_member_id" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_prefix" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_name" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_so_wo_do" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_date_of_birth" class="java.sql.Date"/>
+	<field name="tbl_membership_form_member_nationality" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_residence" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_office_address" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_residental_status" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_pan" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_occupation" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_mobile" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_residence" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_office" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_others" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_email" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_membership_through" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_fk" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_name" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_so_wo_do" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_date_of_birth" class="java.sql.Date"/>
+	<field name="tbl_membership_form_nominee_address" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_contact_number" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_gender" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_relation_with_member" class="java.lang.String"/>
+	<field name="tbl_membership_form_bank_acc_no" class="java.lang.String"/>
+	<field name="tbl_membership_form_ifsc_code" class="java.lang.String"/>
+	<field name="tbl_membership_form_type_of_acc" class="java.lang.String"/>
+	<field name="tbl_membership_form_bank_name" class="java.lang.String"/>
+	<field name="tbl_membership_form_branch_and_address" class="java.lang.String"/>
+	<field name="tbl_membership_form_receipt_no" class="java.lang.String"/>
+	<field name="tbl_membership_form_verified_by" class="java.lang.String"/>
+	<field name="tbl_membership_form_countpk" class="java.lang.Long"/>
+	<field name="tbl_membership_form_prefixcolumn" class="java.lang.String"/>
+	<field name="tbl_membership_form_create_date" class="java.sql.Timestamp"/>
+	<field name="tbl_membership_form_modified_date" class="java.sql.Timestamp"/>
+	<field name="tbl_membership_form_user_id" class="java.lang.String"/>
+	<field name="tbl_membership_form_status" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_pk" class="java.lang.String"/>
+	<field name="tbl_receipt_master_member_id" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_amount" class="java.lang.Double"/>
+	<field name="tbl_receipt_master_receipt_modeofpayment" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_amountinwords" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_otherdetails" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_currentdate" class="java.sql.Date"/>
+	<field name="tbl_receipt_master_receipt_type" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_bank" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_chequedate" class="java.sql.Date"/>
+	<field name="tbl_receipt_master_receipt_drawnOn" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_branch" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_city" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_atProject" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_place" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_profit_from" class="java.lang.Double"/>
+	<field name="tbl_receipt_master_receipt_profit_to" class="java.lang.Double"/>
+	<field name="tbl_receipt_master_receipt_security_cheque_no" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_security_cheque_date" class="java.sql.Date"/>
+	<field name="tbl_receipt_master_receipt_security_cheque_drawnOn" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_security_cheque_address" class="java.lang.String"/>
+	<field name="tbl_receipt_master_countpk" class="java.lang.Long"/>
+	<field name="tbl_receipt_master_prefixcolumn" class="java.lang.String"/>
+	<field name="tbl_receipt_master_create_date" class="java.sql.Timestamp"/>
+	<field name="tbl_receipt_master_modified_date" class="java.sql.Timestamp"/>
+	<field name="tbl_receipt_master_status" class="java.lang.String"/>
+	<field name="tbl_receipt_master_user_id" class="java.lang.String"/>
+	<field name="tbl_busi_asso_master_bu_as_id" class="java.lang.String"/>
+	<field name="tbl_busi_asso_master_member_id" class="java.lang.String"/>
+	<field name="tbl_busi_asso_master_receipt_pk" class="java.lang.String"/>
+	<field name="tbl_busi_asso_master_countpk" class="java.lang.Long"/>
+	<field name="tbl_busi_asso_master_prefixcolumn" class="java.lang.String"/>
+	<field name="tbl_busi_asso_master_create_date" class="java.sql.Timestamp"/>
+	<field name="tbl_busi_asso_master_modified_date" class="java.sql.Timestamp"/>
+	<field name="tbl_busi_asso_master_status" class="java.lang.String"/>
+	<field name="tbl_busi_asso_master_user_id" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="194"/>
+	</pageHeader>
+	<detail>
+		<band height="529">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="9a3e0dca-455f-4479-950d-a9a82e305392"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[BUSINESS ASSOCIATE RECEIPT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="424" y="52" width="131" height="20" uuid="75d0c24b-04ac-49dc-b99c-1721a7179c26"/>
+				<textFieldExpression><![CDATA[$F{tbl_busi_asso_master_receipt_pk}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="355" y="52" width="69" height="20" uuid="bc720064-8e54-4430-b026-a720cc2da32a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Receipt No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="93" width="555" height="90" uuid="ea7bb236-603b-40d3-b393-b883288f7c06"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font size="11" isBold="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Received with thanks from <b>"+$F{tbl_membership_form_member_prefix}+""+$F{tbl_membership_form_member_name}+"</b>  a sum of Rs.<b>"+(new DecimalFormat("0").format($F{tbl_receipt_master_receipt_amount}))+"</b> (Rupees <b>"+$F{tbl_receipt_master_receipt_amountinwords}+")"+"</b> vide cash/cheque/DD No.<b>"+$F{tbl_receipt_master_receipt_otherdetails}+"</b> dated <b>"+($F{tbl_receipt_master_receipt_chequedate}==null?"--":(new SimpleDateFormat("dd MMM yyyy").format($F{tbl_receipt_master_receipt_chequedate})))+"</b> Drawn on <b>"+$F{tbl_receipt_master_receipt_drawnOn}+"</b> Branch <b>"+$F{tbl_receipt_master_receipt_branch}+"</b> City <b>"+$F{tbl_receipt_master_receipt_city}+"</b>."+" Towards <b>Business Associate Amount.</b>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="188" width="258" height="20" uuid="eee9b9a2-7c8a-4a15-a36e-970431bad087"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{tbl_receipt_master_receipt_atProject}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="224" width="258" height="20" uuid="8ae54137-67d9-4217-bb1d-d5d26fb1a3da"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+((new SimpleDateFormat("dd MMM yyyy").format($F{tbl_receipt_master_receipt_currentdate})))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="355" y="226" width="194" height="20" uuid="934f724a-6e03-4ed5-80d7-a9a9bf3cbf81"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[For RIDAS INDIA PROPERTIES]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="261" width="258" height="20" uuid="6efc9370-5e7e-48b5-a907-382e374d890f"/>
+				<textElement markup="styled">
+					<font size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{tbl_receipt_master_receipt_place}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="385" width="293" height="20" uuid="15843188-c784-4288-860b-72f727f97763"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(Signature of the person making the payment)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="289" width="177" height="20" uuid="88ec1b2e-5ab4-46af-a15d-4f638dda60c4"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(Authorized Signatory)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="413" width="290" height="43" uuid="25459b3a-f356-4aa9-888c-f47e07dea346"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[*Cheques & DD are Subject to Realisation
+*E.&.O.E
+*This 'Official Receipt' shall be treated as final receipt of payment received by us.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="188" width="63" height="20" uuid="343034b5-9f0f-46aa-9335-997c56ed7bc4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[For Project]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="224" width="63" height="20" uuid="d6957de5-15b5-4686-b827-10bf221013c8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dated]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="261" width="63" height="20" uuid="1bb50a18-d730-403e-8602-2b2274051f94"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Place]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="28"/>
+	</pageFooter>
+</jasperReport>

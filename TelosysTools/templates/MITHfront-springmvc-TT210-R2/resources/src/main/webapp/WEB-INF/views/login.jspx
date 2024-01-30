@@ -1,0 +1,90 @@
+ <div xmlns:s="http://www.springframework.org/tags" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
+<jsp:output omit-xml-declaration="yes" />
+	<s:message var="app_name" code="application_name" htmlEscape="false" />
+	<s:message var="title" code="welcome_titlepane" arguments="${app_name}" htmlEscape="false" />
+    
+ <style type="text/css">
+ @import url(http://fonts.googleapis.com/css?family=Roboto:400);
+body {
+  background-color:#fff;
+  -webkit-font-smoothing: antialiased;
+  font: normal 14px Roboto,arial,sans-serif;
+}
+
+
+
+.form-login {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
+h4 { 
+ border:0 solid #fff; 
+ border-bottom-width:1px;
+ padding-bottom:10px;
+ text-align: center;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.wrapper {
+    text-align: center;
+}
+ 
+ </style>
+
+<body class='login' >
+	<div class="container">
+		<h1>
+			<!-- <a href="tblUserMaster/login">Login</a> -->
+		</h1>
+		<div class="col-md-offset-4 col-md-3">
+			
+			<s:url value="/j_spring_security_check" var="loginformurl" />
+			
+			<form action="${loginformurl}" method='POST' class="form-login"
+				id="test">
+				
+				<h4 align="center">Please Login</h4>
+				<div class="control-group">
+					<div class="email controls">
+						<input type="text" name='j_username' id="username"
+							class="form-control input-sm chat-input" placeholder="username"/>
+					</div>
+				</div>
+				<br/>
+				<div class="control-group">
+					<div class="pw controls">
+						<input type="password" name="j_password" id="password"
+							class="form-control input-sm chat-input" placeholder="password"/>
+					</div>
+				</div>
+				<br/>
+				<div class="wrapper">
+					<!-- <div class="remember">
+						<input type="checkbox" name="remember" class='icheck-me'
+							data-skin="square" data-color="blue" id="remember"/> <label
+							for="remember">Remember me</label>
+					</div> -->
+					<input type="submit"   value="Sign me in"
+						class="btn btn-primary btn-md"/>
+				</div>
+			</form>
+			<!-- <div class="forget">
+				<a href="#"><span>Forgot password?</span></a>
+			</div> -->
+		</div>
+	</div>
+</body>
+
+</div> 

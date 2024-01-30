@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="businessAssociateAgreement" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5c159ef8-1be3-41ba-8cef-9a79994e462c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="608"/>
+	<parameter name="param_buas_id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="age" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     tbl_busi_asso_master.`bu_as_id` AS tbl_busi_asso_master_bu_as_id,
+     tbl_busi_asso_master.`member_id` AS tbl_busi_asso_master_member_id,
+     tbl_busi_asso_master.`countpk` AS tbl_busi_asso_master_countpk,
+     tbl_busi_asso_master.`prefixcolumn` AS tbl_busi_asso_master_prefixcolumn,
+     tbl_busi_asso_master.`create_date` AS tbl_busi_asso_master_create_date,
+     tbl_busi_asso_master.`modified_date` AS tbl_busi_asso_master_modified_date,
+     tbl_busi_asso_master.`status` AS tbl_busi_asso_master_status,
+     tbl_busi_asso_master.`user_id` AS tbl_busi_asso_master_user_id,
+     tbl_receipt_master.`receipt_pk` AS tbl_receipt_master_receipt_pk,
+     tbl_receipt_master.`member_id` AS tbl_receipt_master_member_id,
+     tbl_receipt_master.`receipt_amount` AS tbl_receipt_master_receipt_amount,
+     tbl_receipt_master.`receipt_modeofpayment` AS tbl_receipt_master_receipt_modeofpayment,
+     tbl_receipt_master.`receipt_amountinwords` AS tbl_receipt_master_receipt_amountinwords,
+     tbl_receipt_master.`receipt_otherdetails` AS tbl_receipt_master_receipt_otherdetails,
+     tbl_receipt_master.`receipt_currentdate` AS tbl_receipt_master_receipt_currentdate,
+     tbl_receipt_master.`receipt_type` AS tbl_receipt_master_receipt_type,
+     tbl_receipt_master.`receipt_bank` AS tbl_receipt_master_receipt_bank,
+     tbl_receipt_master.`receipt_chequedate` AS tbl_receipt_master_receipt_chequedate,
+     tbl_receipt_master.`receipt_drawnOn` AS tbl_receipt_master_receipt_drawnOn,
+     tbl_receipt_master.`receipt_branch` AS tbl_receipt_master_receipt_branch,
+     tbl_receipt_master.`receipt_city` AS tbl_receipt_master_receipt_city,
+     tbl_receipt_master.`receipt_atProject` AS tbl_receipt_master_receipt_atProject,
+     tbl_receipt_master.`receipt_place` AS tbl_receipt_master_receipt_place,
+     tbl_receipt_master.`receipt_profit_from` AS tbl_receipt_master_receipt_profit_from,
+     tbl_receipt_master.`receipt_profit_to` AS tbl_receipt_master_receipt_profit_to,
+     tbl_receipt_master.`receipt_security_cheque_no` AS tbl_receipt_master_receipt_security_cheque_no,
+     tbl_receipt_master.`receipt_security_cheque_date` AS tbl_receipt_master_receipt_security_cheque_date,
+     tbl_receipt_master.`receipt_security_cheque_drawnOn` AS tbl_receipt_master_receipt_security_cheque_drawnOn,
+     tbl_receipt_master.`receipt_security_cheque_address` AS tbl_receipt_master_receipt_security_cheque_address,
+     tbl_receipt_master.`countpk` AS tbl_receipt_master_countpk,
+     tbl_receipt_master.`prefixcolumn` AS tbl_receipt_master_prefixcolumn,
+     tbl_receipt_master.`create_date` AS tbl_receipt_master_create_date,
+     tbl_receipt_master.`modified_date` AS tbl_receipt_master_modified_date,
+     tbl_receipt_master.`status` AS tbl_receipt_master_status,
+     tbl_receipt_master.`user_id` AS tbl_receipt_master_user_id,
+     tbl_membership_form.`member_id` AS tbl_membership_form_member_id,
+     tbl_membership_form.`member_prefix` AS tbl_membership_form_member_prefix,
+     tbl_membership_form.`member_name` AS tbl_membership_form_member_name,
+     tbl_membership_form.`member_so_wo_do` AS tbl_membership_form_member_so_wo_do,
+     tbl_membership_form.`member_date_of_birth` AS tbl_membership_form_member_date_of_birth,
+     tbl_membership_form.`member_nationality` AS tbl_membership_form_member_nationality,
+     tbl_membership_form.`member_residence` AS tbl_membership_form_member_residence,
+     tbl_membership_form.`member_office_address` AS tbl_membership_form_member_office_address,
+     tbl_membership_form.`member_residental_status` AS tbl_membership_form_member_residental_status,
+     tbl_membership_form.`member_pan` AS tbl_membership_form_member_pan,
+     tbl_membership_form.`member_occupation` AS tbl_membership_form_member_occupation,
+     tbl_membership_form.`member_contact_mobile` AS tbl_membership_form_member_contact_mobile,
+     tbl_membership_form.`member_contact_residence` AS tbl_membership_form_member_contact_residence,
+     tbl_membership_form.`member_contact_office` AS tbl_membership_form_member_contact_office,
+     tbl_membership_form.`member_contact_others` AS tbl_membership_form_member_contact_others,
+     tbl_membership_form.`member_contact_email` AS tbl_membership_form_member_contact_email,
+     tbl_membership_form.`member_membership_through` AS tbl_membership_form_member_membership_through,
+     tbl_membership_form.`member_fk` AS tbl_membership_form_member_fk,
+     tbl_membership_form.`nominee_name` AS tbl_membership_form_nominee_name,
+     tbl_membership_form.`nominee_so_wo_do` AS tbl_membership_form_nominee_so_wo_do,
+     tbl_membership_form.`nominee_date_of_birth` AS tbl_membership_form_nominee_date_of_birth,
+     tbl_membership_form.`nominee_address` AS tbl_membership_form_nominee_address,
+     tbl_membership_form.`nominee_contact_number` AS tbl_membership_form_nominee_contact_number,
+     tbl_membership_form.`nominee_gender` AS tbl_membership_form_nominee_gender,
+     tbl_membership_form.`nominee_relation_with_member` AS tbl_membership_form_nominee_relation_with_member,
+     tbl_membership_form.`bank_acc_no` AS tbl_membership_form_bank_acc_no,
+     tbl_membership_form.`ifsc_code` AS tbl_membership_form_ifsc_code,
+     tbl_membership_form.`type_of_acc` AS tbl_membership_form_type_of_acc,
+     tbl_membership_form.`bank_name` AS tbl_membership_form_bank_name,
+     tbl_membership_form.`branch_and_address` AS tbl_membership_form_branch_and_address,
+     tbl_membership_form.`receipt_no` AS tbl_membership_form_receipt_no,
+     tbl_membership_form.`verified_by` AS tbl_membership_form_verified_by,
+     tbl_membership_form.`countpk` AS tbl_membership_form_countpk,
+     tbl_membership_form.`prefixcolumn` AS tbl_membership_form_prefixcolumn,
+     tbl_membership_form.`create_date` AS tbl_membership_form_create_date,
+     tbl_membership_form.`modified_date` AS tbl_membership_form_modified_date,
+     tbl_membership_form.`user_id` AS tbl_membership_form_user_id,
+     tbl_membership_form.`status` AS tbl_membership_form_status,
+     tbl_busi_asso_master.`receipt_pk` AS tbl_busi_asso_master_receipt_pk,
+     tbl_membership_form.`member_current_date` AS tbl_membership_form_member_current_date,
+     tbl_receipt_master.`receipt_NEFT_day` AS tbl_receipt_master_receipt_NEFT_day,
+     tbl_receipt_master.`receipt_NEFT_date_applicable` AS tbl_receipt_master_receipt_NEFT_date_applicable
+FROM
+     `tbl_receipt_master` tbl_receipt_master INNER JOIN `tbl_busi_asso_master` tbl_busi_asso_master ON tbl_receipt_master.`receipt_pk` = tbl_busi_asso_master.`receipt_pk`
+     INNER JOIN `tbl_membership_form` tbl_membership_form ON tbl_busi_asso_master.`member_id` = tbl_membership_form.`member_id`
+     AND tbl_membership_form.`member_id` = tbl_receipt_master.`member_id`
+WHERE
+     bu_as_id = $P{param_buas_id}]]>
+	</queryString>
+	<field name="tbl_busi_asso_master_bu_as_id" class="java.lang.String"/>
+	<field name="tbl_busi_asso_master_member_id" class="java.lang.String"/>
+	<field name="tbl_busi_asso_master_countpk" class="java.lang.Long"/>
+	<field name="tbl_busi_asso_master_prefixcolumn" class="java.lang.String"/>
+	<field name="tbl_busi_asso_master_create_date" class="java.sql.Timestamp"/>
+	<field name="tbl_busi_asso_master_modified_date" class="java.sql.Timestamp"/>
+	<field name="tbl_busi_asso_master_status" class="java.lang.String"/>
+	<field name="tbl_busi_asso_master_user_id" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_pk" class="java.lang.String"/>
+	<field name="tbl_receipt_master_member_id" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_amount" class="java.lang.Double"/>
+	<field name="tbl_receipt_master_receipt_modeofpayment" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_amountinwords" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_otherdetails" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_currentdate" class="java.sql.Date"/>
+	<field name="tbl_receipt_master_receipt_type" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_bank" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_chequedate" class="java.sql.Date"/>
+	<field name="tbl_receipt_master_receipt_drawnOn" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_branch" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_city" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_atProject" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_place" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_profit_from" class="java.lang.Double"/>
+	<field name="tbl_receipt_master_receipt_profit_to" class="java.lang.Double"/>
+	<field name="tbl_receipt_master_receipt_security_cheque_no" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_security_cheque_date" class="java.sql.Date"/>
+	<field name="tbl_receipt_master_receipt_security_cheque_drawnOn" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_security_cheque_address" class="java.lang.String"/>
+	<field name="tbl_receipt_master_countpk" class="java.lang.Long"/>
+	<field name="tbl_receipt_master_prefixcolumn" class="java.lang.String"/>
+	<field name="tbl_receipt_master_create_date" class="java.sql.Timestamp"/>
+	<field name="tbl_receipt_master_modified_date" class="java.sql.Timestamp"/>
+	<field name="tbl_receipt_master_status" class="java.lang.String"/>
+	<field name="tbl_receipt_master_user_id" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_id" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_prefix" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_name" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_so_wo_do" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_date_of_birth" class="java.sql.Date"/>
+	<field name="tbl_membership_form_member_nationality" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_residence" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_office_address" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_residental_status" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_pan" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_occupation" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_mobile" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_residence" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_office" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_others" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_contact_email" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_membership_through" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_fk" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_name" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_so_wo_do" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_date_of_birth" class="java.sql.Date"/>
+	<field name="tbl_membership_form_nominee_address" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_contact_number" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_gender" class="java.lang.String"/>
+	<field name="tbl_membership_form_nominee_relation_with_member" class="java.lang.String"/>
+	<field name="tbl_membership_form_bank_acc_no" class="java.lang.String"/>
+	<field name="tbl_membership_form_ifsc_code" class="java.lang.String"/>
+	<field name="tbl_membership_form_type_of_acc" class="java.lang.String"/>
+	<field name="tbl_membership_form_bank_name" class="java.lang.String"/>
+	<field name="tbl_membership_form_branch_and_address" class="java.lang.String"/>
+	<field name="tbl_membership_form_receipt_no" class="java.lang.String"/>
+	<field name="tbl_membership_form_verified_by" class="java.lang.String"/>
+	<field name="tbl_membership_form_countpk" class="java.lang.Long"/>
+	<field name="tbl_membership_form_prefixcolumn" class="java.lang.String"/>
+	<field name="tbl_membership_form_create_date" class="java.sql.Timestamp"/>
+	<field name="tbl_membership_form_modified_date" class="java.sql.Timestamp"/>
+	<field name="tbl_membership_form_user_id" class="java.lang.String"/>
+	<field name="tbl_membership_form_status" class="java.lang.String"/>
+	<field name="tbl_busi_asso_master_receipt_pk" class="java.lang.String"/>
+	<field name="tbl_membership_form_member_current_date" class="java.sql.Date"/>
+	<field name="tbl_receipt_master_receipt_NEFT_day" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_NEFT_date_applicable" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="98"/>
+	</pageHeader>
+	<detail>
+		<band height="525">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="418" width="555" height="104" isPrintWhenDetailOverflows="true" uuid="a7f775dc-49c5-4691-920e-10596a8eff84"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["\n(Hereinafter shall be referred to as the \"BUSINESS ASSOCIATE\" in this agreement, and which term shall mean and include his / her, legal heirs, successors, nominees, and assigns). \n"
++"\n"
++"And whereas the \"COMPANY\" is a registered partnership firm, registered under the Indian Partnership Act 1932, having being Certified by NSIC- CRISIL as SE3B rating, along with ISO 9001:2008, ISO 14001:2004 & OHSAS 18001:2007.\n"
++"\n"
++"And whereas the \"COMPANY\" is in the business of properties, lands, building, construction, formation and development of open plots and villas and gated community projects including Live Stock farming & other profit making Agro farming business in the State of Karnataka, and Maharashtra.\n"
++"\n"
++"And whereas the \"COMPANY\" for the purpose of expansion of their business proposes to create a customer base for their projects and as such has proposed a business opportunity to the prospective \"BUSINESS ASSOCIATE\"    to purchase their upcoming / proposed developed property or farm produce OR in return for a profit on the projects and business, on the Investment advance Amount made by the \"BUSINESS ASSOCIATE\"."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="105" width="555" height="40" uuid="0af2f693-098b-4c44-9b39-5e60330d2071"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BUSINESS ASSOCIATE AGREEMENT]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="145" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="ee92c64e-9007-40de-a653-3ccb0ebc2d3d"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["This \"BUSINESS ASSOCIATE\" Agreement Made and executed this "+($F{tbl_receipt_master_receipt_currentdate}==null?"--":(new SimpleDateFormat("dd MMM yyyy").format($F{tbl_receipt_master_receipt_currentdate})))+", between:"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="172" width="20" height="20" uuid="eb8b9eb3-4107-42e2-a025-3f127e2946cb"/>
+				<text><![CDATA[M/s.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="172" width="146" height="20" uuid="e4eb17f9-e524-4586-a189-edf4417a4d4c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RIDAS INDIA PROPERTIES,]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="198" width="555" height="89" isPrintWhenDetailOverflows="true" uuid="d71c4975-682b-4ec2-a1b9-7d913a07579e"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["A Registered partnership company under the Indian Partnership Act 1932, having its registered corporate office at #3, Pillana garden, 3rd Stage, 3rd Main, Next to Mediscope Hospital,"
++" Bangalore-560045. And their admin office at No.FB-142,High Street Mall cum Highland Corporate Centre, Kapurbawdi Naka, Majiwada, Thane (west), 400607."
++"\n(Hereinafter shall be referred to as the \"COMPANY\" under this agreement, which term shall mean and include all the partners of the company, successors, assigns, and nominees) and duly represented by its Managing Partner Mr.AYUB HUSSAIN, S/o.Mohammed Husain (late), aged about 43 years."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="315" width="32" height="15" uuid="79c66231-c671-4268-9ff2-61752ebc61e3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AND :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="345" width="20" height="15" uuid="4443f6a1-5fc9-4518-9481-ea00fd690189"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[S/o.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="360" width="63" height="15" uuid="1c92c446-2fb8-4bd8-90a1-dfcadd4e0cb2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aged About]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="375" width="63" height="15" uuid="31b14c37-c718-4d4c-9c6c-148ea3536a4e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Residing at ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="20" y="330" width="535" height="15" uuid="8973631d-ca49-4337-8042-37c8c5b08a7a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_membership_form_member_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="345" width="535" height="15" uuid="87c80e70-5166-4080-ade4-93041702667f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_membership_form_member_so_wo_do}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="360" width="19" height="15" uuid="812020fc-1e64-48bc-a983-0728a8ac8a7b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="375" width="492" height="34" uuid="1b428723-26a2-4836-969d-d22168885ad8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_membership_form_member_residence}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="82" y="360" width="100" height="15" uuid="66453e55-4efd-4d00-b88f-34c8304d96fb"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[years]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="330" width="20" height="16" uuid="243276c4-27ad-4ad0-9533-6b69264b350f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_membership_form_member_prefix}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="667">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="1" width="555" height="206" uuid="63947436-5b2b-4e04-9fab-311562357027"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["And whereas the \"BUSINESS ASSOCIATE\" after having come to know about the \"COMPANY\" business offer through the media and news paper has approached the \"COMPANY\" to take their Investment advance amount and Invest in the COMPANY'S projects and businesses and share the proportion of the developed projects, OR produce, or share the profits as proposed by the \"COMPANY\".\n"
++"\n"
++"And Whereas the \"BUSINESS ASSOCIATE\" after having done his due diligence on the legality of the \"COMPANY\" and after having satisfied and accepting the terms and conditions, has requested to take his Investment advance amount and in return give him a reasonable profit on sale of the company projects or produce in part/ full  instead of any developed projects or produce as proposed by the \"COMPANY\", and agrees to Invest an amount of Rs. "+(new DecimalFormat("0").format($F{tbl_receipt_master_receipt_amount}))+"/-(Rupees "+$F{tbl_receipt_master_receipt_amountinwords}+") as ‘Investment Advance Amount' to the \"COMPANY\".\n"
++"\n"
++"And whereas the \"BUSINESS ASSOCIATE\" having agreed to Invest in the \"COMPANY\" has on this day paid Rs. "+(new DecimalFormat("0").format($F{tbl_receipt_master_receipt_amount}))+"/-(Rupees "+$F{tbl_receipt_master_receipt_amountinwords}+") by"+" way of Cheque Bearing No : "+$F{tbl_receipt_master_receipt_otherdetails}+", dated "+($F{tbl_receipt_master_receipt_chequedate}==null?"--":(new SimpleDateFormat("dd MMM yyyy").format($F{tbl_receipt_master_receipt_chequedate})))+", drawn on "+$F{tbl_receipt_master_receipt_drawnOn}+"  Bank, "+$F{tbl_receipt_master_receipt_branch}+"   branch (Cheque subject to realization),"+
+"and the receipt of the same is acknowledged by the \"COMPANY\" vide their official receipt No. "+$F{tbl_receipt_master_receipt_pk}+" dated "+($F{tbl_receipt_master_receipt_currentdate}==null?"--":(new SimpleDateFormat("dd MMM yyyy").format($F{tbl_receipt_master_receipt_currentdate})))+"."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="226" width="555" height="441" uuid="6391727e-3bec-4c93-b874-c345f6ba7bcc"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["\n"
++"1. The “COMPANY “after receiving the Investment advance amount from the “BUSINESS ASSOCIATE”, shall utilize for the development of their projects, and farms as per the company plans and agrees on the request of the “BUSINESS ASSOCIATE” to sell the finished projects or produce in full/part and share a nominal business profits on the Investment advance amount so paid by the “BUSINESS ASSOCIATE” with a reasonable profit every month  till the refund of the Investment advance amount so made by the “BUSINESS ASSOCIATE”."
++"\n\n"
++"2. The “COMPANY” agrees to return the said Investment advance amount in full irrespective of the period of investment agreed upon and so paid by the “BUSINESS ASSOCIATE” without any deduction or charges within 40 days from the date of intimation seeking refund of the Investment advance amount paid by the “BUSINESS ASSOCIATE”."
++"\n\n"
++"3. The “COMPANY” assures the “BUSINESS ASSOCIATE” that the “COMPANY” shall pay nominal monthly profits of Rs."+(new DecimalFormat("0").format($F{tbl_receipt_master_receipt_profit_from}))+"/- to Rs."+(new DecimalFormat("0").format($F{tbl_receipt_master_receipt_profit_to}))+"/- on the Advance Investment made by the “BUSINESS ASSOCIATE” which shall be paid every month starting from "+($F{tbl_receipt_master_receipt_NEFT_date_applicable}==null?"--":(new SimpleDateFormat("dd MMM yyyy").format($F{tbl_receipt_master_receipt_NEFT_date_applicable})))+" onwards through Cheque or bank transfer."
++"\n\n"
++"4. The “COMPANY” has on this day issued a Security cheque for the Investment advance amount so paid by the “BUSINESS ASSOCIATE” for an amount of Rs."+(new DecimalFormat("0").format($F{tbl_receipt_master_receipt_amount}))+"/- (Rupees "+$F{tbl_receipt_master_receipt_amountinwords}+") vide Cheque No."+$F{tbl_receipt_master_receipt_security_cheque_no}+", dated "+($F{tbl_receipt_master_receipt_security_cheque_date}==null?"--":(new SimpleDateFormat("dd MMM yyyy").format($F{tbl_receipt_master_receipt_security_cheque_date})))+", drawn on "+$F{tbl_receipt_master_receipt_security_cheque_drawnOn}+" Bank, "+$F{tbl_receipt_master_receipt_security_cheque_address}+" Branch."
++"\n\n"
++"5. The “COMPANY” shall cease to be liable for any payment after the encashment of the cheque as stated in clause 4 of this agreement, and this agreement shall be deemed as cancelled and fully settled."
++"\n\n"
++"6. The period of the Investment Advance Amount so paid by the “BUSINESS ASSOCIATE” shall be initially for a period one years, and may be renewed with a fresh security Cheque if the “BUSINESS ASSOCIATE” wishes to continue, and until the refund of the entire Investment advance amount so paid by the “BUSINESS ASSOCIATE” the “COMPANY” assures and agrees to pay the profits as stated and mentioned in clause 3 of this agreement and the security cheque shall be on the expiry of the period as stated above and the same shall be binding as per clause 4 of this agreement."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="206" width="555" height="20" uuid="64b75a7f-8cb3-4370-b815-e8cc9e976fa6"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA["NOW THIS AGREEMENT WITNESSETH :   ]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="0" width="100" height="1" uuid="56312d6d-ba1e-45b7-aeea-ba1f0eb31f21"/>
+			</break>
+		</band>
+		<band height="224">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="224" isPrintWhenDetailOverflows="true" uuid="4577fe38-1ef2-431b-8027-d4333a5f6a87"/>
+				<textElement textAlignment="Justified" markup="styled"/>
+				<textFieldExpression><![CDATA["7. The “BUSINESS ASSOCIATE”    shall not have any rights to interfere in the affairs of the business of the “COMPANY” or seek any explanations or ask for any such details pertaining to the business in the day to day course of the business of the “COMPANY”."
++"\n\n"
++"8. The “COMPANY” since is following a transparent and honest transaction in the business, shall voluntarily share the return in case of the “COMPANY” making quality profits over and above the profits paid per month in a year to the “BUSINESS ASSOCIATE”, and such payments shall be at the sole decision and discretion of the “COMPANY” to pay up voluntarily as per the “COMPANY’S” decision."
++"\n\n"
++"9. The “BUSINESS ASSOCIATE” shall not transfer / sell / mortgage this agreement or cheque provided by the “COMPANY” and shall not involve in trading of this business option with other public, and in case of any such breach by the “BUSINESS ASSOCIATE” then the “COMPANY” shall not be responsible for any such damages."
++"\n\n"
++"In witness whereof both the “Company” and the “BUSINESS ASSOCIATE”    have signed this Investment agreement this day, month and year first above mentioned."]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="0" width="100" height="1" uuid="ac9c8b91-bce9-4975-9dfb-85be483e3c37"/>
+			</break>
+		</band>
+		<band height="344">
+			<staticText>
+				<reportElement x="5" y="22" width="100" height="14" uuid="b0596c6b-a67c-4cc8-b37a-594861137e4e"/>
+				<textElement>
+					<font size="11" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[WITNESSES :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="86" width="156" height="14" uuid="9136e0aa-ddc7-4cdd-ba1b-3d9e440e9f4e"/>
+				<textElement>
+					<font isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[1. Mrs. NIDA HUSSAIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="100" width="156" height="14" uuid="345155b9-63ed-4055-9699-988d84769093"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Business Partner]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="214" width="156" height="14" uuid="61c6b391-b428-4163-9daa-19189a5e3634"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[2.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="354" y="86" width="135" height="14" uuid="bccc2e68-e682-4d6c-b633-a20c1b683af1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AYUB HUSSAIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="354" y="100" width="135" height="14" uuid="2744484f-c162-4089-95c7-7a8c0051778f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Managing Partner]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="114" width="233" height="14" uuid="b8d67050-486c-459f-8f1f-27c6267090a5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RIDAS INDIA PROPERTIES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="354" y="214" width="135" height="14" uuid="a9f4c05e-4d18-4507-8cf4-53af882205b5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[__________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="354" y="228" width="135" height="20" uuid="e51e853d-171f-47dd-a87a-5ab8215ef5c7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[(Business Associate)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="302" y="248" width="253" height="48" uuid="51a25844-b1c9-4416-bc38-7fb8ec301082"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_membership_form_member_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="28">
+			<textField>
+				<reportElement x="229" y="4" width="100" height="20" uuid="adcfe0e4-b48e-4498-bd72-dfa3be1c5343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["-"+$V{PAGE_NUMBER}+"-"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

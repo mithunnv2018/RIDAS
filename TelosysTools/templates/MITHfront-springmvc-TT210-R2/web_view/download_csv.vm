@@ -1,0 +1,36 @@
+#set($mylist=[])##
+#set($mycount=0)##
+#foreach( $attribute in $entity.nonKeyAttributes )## 
+#if($attribute.name=="countpk" || $attribute.name=="createDate" || $attribute.name=="modifiedDate" || $attribute.name=="status" || $attribute.name=="prefixcolumn" || $attribute.name=="userId")##
+#else##
+#set($succ=$mylist.add($attribute))##
+#set($mycount=$mycount+1)##
+##--set( $allFields = $fn.concatLists($keyFields, $dataFields) )
+#end##
+#end##
+#foreach( $attribute in $mylist )${attribute.name},#end##
+
+#foreach($attribute in $mylist)##
+#if($attribute.isBigDecimalType())##
+2.0##
+#elseif($attribute.isBooleanType())##
+true##
+#elseif($attribute.isStringType())##
+text##
+#elseif($attribute.isSqlDateType())##
+02/23/2015##
+#elseif($attribute.isTemporalType())##
+02/23/2015##
+#elseif($attribute.isDoubleType())##
+2.0##
+#elseif($attribute.isIntegerType())##
+1##
+#elseif($attribute.isLongType())##
+12334567##
+#else##
+text##
+#end##			
+#if($foreach.hasNext)##
+,##
+#end##
+#end##

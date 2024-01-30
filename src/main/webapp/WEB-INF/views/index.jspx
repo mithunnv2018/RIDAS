@@ -1,0 +1,23 @@
+<div xmlns:s="http://www.springframework.org/tags" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:sec="http://www.springframework.org/security/tags" version="2.0">
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
+<jsp:output omit-xml-declaration="yes" />
+	<s:message var="app_name" code="application_name" htmlEscape="false" />
+	<s:message var="title" code="welcome_titlepane" arguments="${app_name}" htmlEscape="false" />
+    
+    <div class="container">
+		<h3>
+			<s:message code="welcome_h3" arguments="${app_name}" />
+		</h3>
+    <sec:authorize access="hasRole('ROLE_ADMIN')" var="isAdmin">  
+		<ul class="entity"> 
+		     <li><a href="tblMembershipForm">Membership Form</a></li>
+             <li><a href="tblReceiptMaster">Receipt</a></li>
+             <li><a href="tblBusiAssoMaster">Business Associate</a></li>
+            <li><a href="tblPlotMaster">Plot</a></li>
+            <li><a href="tblPlotRecMaster">Plot Receipt</a></li>
+            <li><a href="tblReceiptMaster/printPDFReportsAll">Print Reports</a></li>
+          
+	    </ul>
+	</sec:authorize>
+    </div> <!-- /container -->
+</div>

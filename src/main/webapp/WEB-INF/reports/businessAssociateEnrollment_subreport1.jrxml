@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="businessAssociate_subreport1" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7fbacc28-8732-44a2-90cd-d65b16bf1c36">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="member_id2" class="java.lang.String"/>
+	<parameter name="receiptPk1" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     tbl_receipt_master.`receipt_pk` AS tbl_receipt_master_receipt_pk,
+     tbl_receipt_master.`member_id` AS tbl_receipt_master_member_id,
+     tbl_receipt_master.`receipt_amount` AS tbl_receipt_master_receipt_amount,
+     tbl_receipt_master.`receipt_modeofpayment` AS tbl_receipt_master_receipt_modeofpayment,
+     tbl_receipt_master.`receipt_amountinwords` AS tbl_receipt_master_receipt_amountinwords,
+     tbl_receipt_master.`receipt_otherdetails` AS tbl_receipt_master_receipt_otherdetails,
+     tbl_receipt_master.`receipt_currentdate` AS tbl_receipt_master_receipt_currentdate,
+     tbl_receipt_master.`receipt_type` AS tbl_receipt_master_receipt_type,
+     tbl_receipt_master.`receipt_bank` AS tbl_receipt_master_receipt_bank,
+     tbl_receipt_master.`receipt_chequedate` AS tbl_receipt_master_receipt_chequedate,
+     tbl_receipt_master.`receipt_drawnOn` AS tbl_receipt_master_receipt_drawnOn,
+     tbl_receipt_master.`receipt_branch` AS tbl_receipt_master_receipt_branch,
+     tbl_receipt_master.`receipt_city` AS tbl_receipt_master_receipt_city,
+     tbl_receipt_master.`receipt_atProject` AS tbl_receipt_master_receipt_atProject,
+     tbl_receipt_master.`receipt_place` AS tbl_receipt_master_receipt_place,
+     tbl_receipt_master.`receipt_profit_from` AS tbl_receipt_master_receipt_profit_from,
+     tbl_receipt_master.`receipt_profit_to` AS tbl_receipt_master_receipt_profit_to,
+     tbl_receipt_master.`receipt_security_cheque_no` AS tbl_receipt_master_receipt_security_cheque_no,
+     tbl_receipt_master.`receipt_security_cheque_date` AS tbl_receipt_master_receipt_security_cheque_date,
+     tbl_receipt_master.`receipt_security_cheque_drawnOn` AS tbl_receipt_master_receipt_security_cheque_drawnOn,
+     tbl_receipt_master.`receipt_security_cheque_address` AS tbl_receipt_master_receipt_security_cheque_address,
+     tbl_receipt_master.`countpk` AS tbl_receipt_master_countpk,
+     tbl_receipt_master.`prefixcolumn` AS tbl_receipt_master_prefixcolumn,
+     tbl_receipt_master.`create_date` AS tbl_receipt_master_create_date,
+     tbl_receipt_master.`modified_date` AS tbl_receipt_master_modified_date,
+     tbl_receipt_master.`status` AS tbl_receipt_master_status,
+     tbl_receipt_master.`user_id` AS tbl_receipt_master_user_id
+FROM
+     `tbl_receipt_master` tbl_receipt_master
+WHERE
+     member_id = $P{member_id2}
+ AND receipt_type = "businessassociate"
+ AND receipt_pk = $P{receiptPk1}]]>
+	</queryString>
+	<field name="tbl_receipt_master_receipt_pk" class="java.lang.String"/>
+	<field name="tbl_receipt_master_member_id" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_amount" class="java.lang.Double"/>
+	<field name="tbl_receipt_master_receipt_modeofpayment" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_amountinwords" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_otherdetails" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_currentdate" class="java.sql.Date"/>
+	<field name="tbl_receipt_master_receipt_type" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_bank" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_chequedate" class="java.sql.Date"/>
+	<field name="tbl_receipt_master_receipt_drawnOn" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_branch" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_city" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_atProject" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_place" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_profit_from" class="java.lang.Double"/>
+	<field name="tbl_receipt_master_receipt_profit_to" class="java.lang.Double"/>
+	<field name="tbl_receipt_master_receipt_security_cheque_no" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_security_cheque_date" class="java.sql.Date"/>
+	<field name="tbl_receipt_master_receipt_security_cheque_drawnOn" class="java.lang.String"/>
+	<field name="tbl_receipt_master_receipt_security_cheque_address" class="java.lang.String"/>
+	<field name="tbl_receipt_master_countpk" class="java.lang.Long"/>
+	<field name="tbl_receipt_master_prefixcolumn" class="java.lang.String"/>
+	<field name="tbl_receipt_master_create_date" class="java.sql.Timestamp"/>
+	<field name="tbl_receipt_master_modified_date" class="java.sql.Timestamp"/>
+	<field name="tbl_receipt_master_status" class="java.lang.String"/>
+	<field name="tbl_receipt_master_user_id" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="96" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="523" height="85" uuid="7555e2a1-c87c-4ede-96e5-f31e18efdfef"/>
+			</rectangle>
+			<textField>
+				<reportElement x="130" y="12" width="353" height="20" uuid="b8df0b00-6e34-43ac-ac3f-6354feaa158f"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_receipt_master_receipt_modeofpayment}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="12" width="112" height="20" uuid="3c7a9b4d-d3db-4593-a492-ac1e2380d11d"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mode of payment]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="32" width="353" height="20" uuid="c42268da-2b31-4e3e-9ff3-bbb49d54ae4b"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+$F{tbl_receipt_master_receipt_pk}+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="32" width="112" height="20" uuid="d66999e0-b4f6-4f0f-8c63-1926e975a016"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Receipt No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="52" width="132" height="20" uuid="1d211391-eccb-424b-a930-ddc6ff8482f5"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[": "+(new DecimalFormat("0").format($F{tbl_receipt_master_receipt_amount}))+""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="52" width="112" height="20" uuid="275bb809-f523-44d1-8a62-0604b95ab2c5"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount: Rs.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="262" y="52" width="44" height="20" uuid="737d905e-2b14-4bb0-871b-90c87e467f16"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<text><![CDATA[(Rupees]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="306" y="52" width="177" height="20" uuid="789bc42e-f95d-49a3-a0ae-0a8837534c00"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[""+$F{tbl_receipt_master_receipt_amountinwords}+")"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
